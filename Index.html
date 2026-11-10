@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freshora | Fresh Fruit Juice</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fffdf5;
+  color: #183d22;
+}
+
+header {
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 2px 10px #ddd;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #17652e;
+}
+
+nav a {
+  text-decoration: none;
+  color: #24442a;
+  margin: 8px;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 75px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f6c8, #fff2c8);
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #145b2a;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #17652e;
+  color: white;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: #f0a900;
+  color: #173c20;
+}
+
+section {
+  padding: 55px 7%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #17652e;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px #ddd;
+}
+
+.fruit {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #17652e;
+  margin: 12px;
+}
+
+.about {
+  background: #edf7df;
+  line-height: 1.8;
+}
+
+.contact {
+  background: #fff2d5;
+  line-height: 2;
+}
+
+footer {
+  background: #123d20;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+#cart {
+  font-weight: bold;
+  color: #17652e;
+}
+
+@media(max-width: 600px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍹 FRESHORA</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="cart">🛒 Cart: 0</div>
+</header>
+
+<section class="hero" id="home">
+  <h1>Freshness in Every Sip!</h1>
+
+  <p>Fresh fruits, delicious taste and happiness in every glass.</p>
+
+  <a href="#menu" class="btn">Explore Our Menu</a>
+</section>
+
+<section id="menu">
+  <h2>Our Fresh Menu 🍓</h2>
+  <p>Choose your favourite juice!</p>
+
+  <div class="products">
+
+    <div class="card">
+      <div class="fruit">🥭</div>
+      <h3>Mango Juice</h3>
+      <p>Sweet and refreshing</p>
+      <div class="price">₹80</div>
+      <button class="btn" onclick="addCart()">Add +</button>
+    </div>
+
+    <div class="card">
+      <div class="fruit">🍊</div>
+      <h3>Orange Juice</h3>
+      <p>Fresh citrus flavour</p>
+      <div class="price">₹70</div>
+      <button class="btn" onclick="addCart()">Add +</button>
+    </div>
+
+    <div class="card">
+      <div class="fruit">🍎</div>
+      <h3>Apple Juice</h3>
+      <p>Fresh and tasty</p>
+      <div class="price">₹70</div>
+      <button class="btn" onclick="addCart()">Add +</button>
+    </div>
+
+    <div class="card">
+      <div class="fruit">🍉</div>
+      <h3>Watermelon Juice</h3>
+      <p>Cool summer drink</p>
+      <div class="price">₹75</div>
+      <button class="btn" onclick="addCart()">Add +</button>
+    </div>
+
+    <div class="card">
+      <div class="fruit">🍓</div>
+      <h3>Mixed Fruit Juice</h3>
+      <p>Fruity delicious mix</p>
+      <div class="price">₹90</div>
+      <button class="btn" onclick="addCart()">Add +</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Freshora 🌿</h2>
+  <p>
+    Welcome to Freshora! We love fresh fruits
+    and delicious drinks. Our goal is to make
+    every sip refreshing and enjoyable.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us 📞</h2>
+  <p>Have questions? We would love to hear from you!</p>
+  <p>Email: hello@example.com</p>
+  <p>Location: Your City, India</p>
+</section>
+
+<footer>
+  <h3>🍹 FRESHORA</h3>
+  <p>Freshness in Every Sip!</p>
+  <p>© 2026 Freshora. Demo Website.</p>
+</footer>
+
+<script>
+let count = 0;
+
+function addCart() {
+  count++;
+  document.getElementById("cart").innerText =
+    "🛒 Cart: " + count;
+}
+</script>
+
+</body>
+</html>
